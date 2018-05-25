@@ -1,0 +1,5 @@
+﻿{
+    "connectionString": "mongodb://localhost:27017/crud",
+    "apiUrl": "http://localhost:3003/api",
+    "secret": "SECRET"
+}
