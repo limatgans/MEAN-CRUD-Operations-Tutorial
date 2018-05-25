@@ -1,0 +1,12 @@
+.matcard{
+    margin: auto;
+    width: 40%;
+    border: 3px solid blueviolet;
+    
+}
+.mat-card-content{
+    margin: auto;
+    
+    text-align: center;
+   
+}

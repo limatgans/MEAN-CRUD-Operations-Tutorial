@@ -1,0 +1,85 @@
+
+<p>
+  
+  <mat-card class="matcard">
+      <mat-card-content *ngIf = "!validateEmailFlag">
+          <mat-form-field>
+              <input [(ngModel)]="email" name="" matInput placeholder="Email ID" [formControl]="emailFormControl" required>
+              <mat-error *ngIf="emailFormControl.invalid">{{getEmailErrorMessage()}}</mat-error>
+          </mat-form-field>    
+      
+          <br>
+          <button mat-raised-button (click)="validateEmail()">Submit</button>
+          <br>
+      </mat-card-content>
+
+      <mat-card-content class="mat-card-content" *ngIf = "validateEmailFlag">
+    <!-- Registration Form Elements -->
+      <mat-form-field>
+        <input matInput [(ngModel)]="firstname" name="" placeholder="First Name" [formControl]="firstnameFormControl" required>
+        <mat-error *ngIf="firstnameFormControl.invalid">{{getFirstNameErrorMessage()}}</mat-error>
+      </mat-form-field>
+     
+      
+      <mat-form-field>
+        <input matInput [(ngModel)]="lastname" name="" placeholder="Last Name" [formControl]="lastnameFormControl" required>
+        <mat-error *ngIf="lastnameFormControl.invalid">{{getLastNameErrorMessage()}}</mat-error>
+      </mat-form-field>
+  
+      <br>
+      <mat-form-field>
+        <input matInput [(ngModel)]="mobile" name="" placeholder="Mobile Number"  [formControl]="mobileFormControl" required>
+        <mat-error *ngIf="mobileFormControl.invalid">{{getMobileErrorMessage()}}</mat-error>
+      </mat-form-field>
+  
+      <br>
+      <mat-form-field>
+          <input [(ngModel)]="email" name="" matInput placeholder="Email ID" [formControl]="emailFormControl" required readonly>
+          <mat-error *ngIf="emailFormControl.invalid">{{getEmailErrorMessage()}}</mat-error>
+      </mat-form-field>
+  
+      <br>
+      <mat-form-field class="dateofBirth">
+          <input matInput [(ngModel)]="doB" name=""
+                          [min]="minDate" [max]="maxDate" 
+                          [matDatepicker]="birthPicker" 
+                          placeholder="Date of Birth" 
+                          [formControl]="dobFormControl"
+                          onfocus = "this.blur()"
+                          required>
+          <mat-datepicker-toggle matSuffix [for]="birthPicker"></mat-datepicker-toggle>
+          <mat-datepicker touchUi="true" #birthPicker disabled='false'></mat-datepicker>
+          <mat-error *ngIf="dobFormControl.invalid">{{getDoBErrorMessage()}}</mat-error>
+      </mat-form-field>
+      
+      
+      <mat-form-field class="dateofJoin">
+          <input matInput  [(ngModel)]="doJ" name=""
+                           [min]="minJoinDate" 
+                           [max]="maxJoinDate" 
+                           [matDatepicker]="joinPicker"
+                           [formControl]="dojFormControl" 
+                           placeholder="Date of Join" 
+                           onfocus = "this.blur()" 
+                           required>
+          <mat-datepicker-toggle matSuffix [for]="joinPicker"></mat-datepicker-toggle>
+          <mat-datepicker touchUi="true" #joinPicker disabled='false'></mat-datepicker>
+          <mat-error *ngIf="dobFormControl.invalid">{{getDoJErrorMessage()}}</mat-error>
+      </mat-form-field>
+  
+      <!-- <md-button ng-click="myTabIndex = myTabIndex+1">Save & View</md-button> -->
+      
+      <br>
+      <button mat-raised-button (click)="exportvalues()">Submit</button>
+    </mat-card-content>
+  </mat-card>
+</p>
+  
+  <p>
+    {{some}}
+   
+  </p>
+    
+<p>
+  form works!
+</p>

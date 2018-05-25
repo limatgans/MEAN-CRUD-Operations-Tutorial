@@ -1,0 +1,21 @@
+<mat-card class="matcard">
+<mat-card-content class="mat-card-content">
+    <mat-form-field>
+        <input [(ngModel)]="email" 
+               name="" 
+               matInput placeholder="Email ID" 
+               [formControl]="emailFormControl" 
+               required>
+        <mat-error *ngIf="emailFormControl.invalid">{{getEmailErrorMessage()}}</mat-error>
+    </mat-form-field> 
+      
+    <br>
+    <button mat-raised-button (click)="validateEmail()">DELETE</button>
+    <br>
+</mat-card-content>  
+</mat-card>
+
+
+<p>
+  delete works!
+</p>
